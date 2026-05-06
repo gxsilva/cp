@@ -21,22 +21,11 @@ int main(void)
 		cout << x << '\n';
 	else if (y > 0)
 	{
+		long long tmp = (x - y) / 2;
 		if (x > z)
-		{
-			long long tmp = (x - y) / 2;
-			if (tmp <= (z - y))
-					cout << (y + tmp) << '\n';
-			else
-				cout << (z) << '\n';
-		}
+			cout << (tmp <= (z - y) ? (y + tmp) : z) << '\n';
 		else
-		{
-			long long tmp = (x - y) / 2;
-			if (tmp <= z)
-				cout << (tmp + y) << '\n';
-			else
-				cout << (tmp + z) << '\n';
-		}
+			cout << (tmp <= z ? (tmp + y) : (tmp + z)) << '\n';
 	}
 	else
 		cout << (x / 2 <= z ? x / 2 : y) << '\n';
