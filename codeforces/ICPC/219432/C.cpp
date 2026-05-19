@@ -17,5 +17,29 @@ int main(void)
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
+	ll n; cin >> n;
+	vector<ll> v(n);
+
+	for (int i = 0; i < n; i++)
+		cin >> v[i];
+	int e = 0;
+	int o = 0;
+	int p = 0;
+	int ne = 0;
+	for (ll x : v)
+	{
+		if (x % 2 == 0)
+			e++;
+		else
+			o++;
+		if (x > 0)
+			p++;
+		else if (x < 0)
+			ne++;	
+	}
+	cout << "Even: " << e << '\n';
+	cout << "Odd: " << o << '\n';
+	cout << "Positive: " << p << '\n';
+	cout << "Negative: " << ne << '\n';
 	return (0);
 }

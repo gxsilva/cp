@@ -17,5 +17,13 @@ int main(void)
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
+	int x; cin >> x;
+	int l  = x / 10;
+	int r = x  % 10;
+
+	if (r == 0 || l  % r == 0 || r % l == 0)
+		cout << "YES\n";
+	else
+		cout << "NO\n";
 	return (0);
 }

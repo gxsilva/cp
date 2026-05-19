@@ -17,5 +17,16 @@ int main(void)
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
+	long long x; cin >> x;
+	int cc = 0;
+
+	for (int i = 1; i <= x; i++)
+		if (i % 2 == 0)
+		{
+			cc++;
+			cout << i << '\n';
+		}
+	if (cc == 0)
+		cout << "-1\n"; 
 	return (0);
 }
