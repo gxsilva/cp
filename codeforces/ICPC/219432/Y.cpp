@@ -12,14 +12,15 @@ const double eps = 1e-9;
 
 using namespace std;
 
-long long fib(long long x)
+int memo[100];
+
+int fib(int n)
 {
-	if (x == 1) return 0;
-	else if (x == 2) return 1;
-	long long r1 = fib(x - 1);
-	long long r2 =  fib(x - 2);
-	cout << r1 << ' ' << r2 << ' ';
-	return (r1 + r2);
+	if (n <= 1) return n;
+	if (memo[n] != -1) return memo[n];
+	memo[n] = fib(n - 1) + fib(n - 2);
+	cout << memo[n] << ' ';
+	return memo[n];
 }
 
 int main(void)
@@ -28,11 +29,16 @@ int main(void)
 	cin.tie(0);
 
 	int x; cin >> x;
+	memset(memo, -1, sizeof(memo));
 	if (x == 1)
-			cout << "0\n";
+		cout << "0\n";
 	else if (x == 2)
-			cout << "0 1\n"; 
+		cout << "0 1\n";
 	else
-		cout << fib(x) << '\n';
+	{
+		cout << "0 1 ";
+		fib(x - 1);
+		cout << '\n';
+	}
 	return (0);
 }

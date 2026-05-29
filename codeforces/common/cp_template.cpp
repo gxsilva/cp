@@ -12,6 +12,15 @@ const double eps = 1e-9;
 
 using namespace std;
 
+int memo[100];
+
+int fib(int n)
+{
+	if (n <= 1) return n;
+	if (memo[n] != -1) return memo[n];
+	return memo[n] = fib(n - 1) + fib(n - 2);
+}
+
 int main(void)
 {
 	ios::sync_with_stdio(0);
